@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "strict": true,
+    "sourceMap": false,
+    "outDir": "dist/js",
+    "rootDir": "src",
+    "baseUrl": "src",
+    "removeComments": true,
+    "esModuleInterop": true,
+    "incremental": true,
+    "jsx": "react",
+    "paths": {
+      "@styles": ["styles/*.css"]
+    }
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["node_modules, dist"]
+}

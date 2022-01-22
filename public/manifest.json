@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "Calendar MAL",
+  "description": "Chrome extension to track and display the animes that a user of MAL has on the currently watching list in a weekly calendar.",
+  "version": "0.0.0",
+  "author": "Pablo Silió Polanco",
+
+  "action": {
+    "default_icon": "icon128.png",
+    "default_popup": "popup.html"
+  },
+
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
+
+  "background": {
+    "service_worker": "js/background.js"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/vendor.js", "js/contentscript.js"]
+    }
+  ],
+
+  "host_permissions": ["<all_urls>"],
+
+  "permissions": ["storage"]
+}

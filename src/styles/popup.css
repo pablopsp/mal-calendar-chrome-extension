@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  /* Max size of the popup 800x600 */
+  width: 800px;
+  height: 600px;
+  overflow: hidden;
+}
