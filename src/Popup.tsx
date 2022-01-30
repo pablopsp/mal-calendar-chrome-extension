@@ -1,23 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 
 import "@styles/popup.css";
+import "@styles/global.css";
 
 const PopUp = () => {
-  const [show, setShow] = React.useState(false);
+  const [malUser, setMalUser] = useState<string | undefined>("malUser");
 
-  return (
-    <>
-      <button className="bg-blue-400" onClick={() => setShow(!show)}>
-        {show ? "Hide" : "Show"}
-      </button>
-      {show &&
-        ReactDOM.createPortal(
-          <h1>Hello World</h1>,
-          document.querySelector("#root")!
-        )}
-    </>
-  );
+  // Get username from chrome.storage.local
+  useEffect(() => {
+    (async () =>
+      setMalUser((await chrome.storage.local.get("malUser")).malUser))();
+  }, []);
+
+  if (!malUser) chrome.runtime.openOptionsPage(() => window.close());
+  return <>{malUser}</>;
 };
 
 ReactDOM.render(

@@ -34,5 +34,5 @@
 
   "host_permissions": ["<all_urls>"],
 
-  "permissions": ["storage"]
+  "permissions": ["storage", "notifications"]
 }

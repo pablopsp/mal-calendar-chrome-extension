@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-mal-title font-bold text-2xl;
+  }
+
+  button {
+    @apply cursor-pointer bg-mal-blue text-white hover:bg-mal-blue-hover hover:text-white;
+  }
+}
